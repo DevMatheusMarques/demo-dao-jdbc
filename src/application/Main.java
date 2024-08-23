@@ -14,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 
 
 public class Main {
@@ -25,5 +26,13 @@ public class Main {
         Seller seller = sellerDao.findyById(3);
 
         System.out.println(seller);
+
+        System.out.println("=== TEST 2: seller findByDepartment =====");
+        Department department = new Department(2, null);
+        List<Seller> list = sellerDao.findByDepartment(department);
+
+        for (Seller obj : list) {
+            System.out.println(obj);
+        }
     }
 }
