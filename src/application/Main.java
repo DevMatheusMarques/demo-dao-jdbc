@@ -18,15 +18,11 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-        Department department = new Department(1, "RH");
-
-        Seller seller = new Seller(1, "Matheus", "matheus@gmail.com", new Date(), 3000.0, department);
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
-        System.out.println(department);
+        Seller seller = sellerDao.findyById(3);
+
         System.out.println(seller);
     }
 }
